@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>lesson-4</title>
+    <script>
+        //зфдание №1
+
+        var inputNumber = prompt('Введите число от 0 до 999');
+        function numObj() {
+            var arrNumber = inputNumber.split('');
+            if (arrNumber.length == 2) {
+                arrNumber.unshift(0)
+            } else if (arrNumber.length == 1) {
+                arrNumber.unshift(0, 0)
+
+            } else if (arrNumber.length > 3 || isNaN(inputNumber)) {
+                console.log("вы ввели некорректное значение")
+
+                return
+            }
+            var obj = {
+                'единицы': +arrNumber[2],
+                'десятки': +arrNumber[1],
+                'сотни': +arrNumber[0]
+            }
+            console.log(obj)
+        }
+        numObj()
+
+    </script>
+</head>
